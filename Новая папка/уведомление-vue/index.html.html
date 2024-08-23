@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Центр уведомлений</title>
+    <head>
+        <body>
+            <div id="app" class="ui container">
+                <h1>Центр уведомлений</h1>
+                <notification-message type="error" header="О нет!">
+                    <p>Твой рейс был <b>отменен</b> по техническим причинам(</p>
+                </notification-message>
+
+                <notification-message type="success" header="О даа!">
+                    <p>Твой рейс вернули!</p>
+                </notification-message>
+
+                <notification-message>
+                    <p>Доброе утро!</p>
+                </notification-message>
+                <notification-message type="star" header="С днем рождения!">
+                    <p>Поздравляем!</p>
+                </notification-message>
+            </div>
+            <script type="text/x-template" id="notification-message-temps">
+                <div class="ui message" :class="type" v-if="!hidden">
+                    <i class="close icon" @click="hide"></i>
+                    <div class="header">
+                        {{header}}
+                    </div>
+                    <slot></slot>
+                </div>
+            </script>
+
+            <script src="https://unpkg.com/vue@3"></script>
+            <script>
+                Vue.createApp({})
+                    .component('notification-message', {
+                        template: '#notification-message-temps',
+                        props: {
+                            type: { type: String, default: 'info' },
+                            header: { type: String, default: 'Уведомление' }
+                        },
+                        data() {
+                            return {
+                                hidden: false
+                            }
+                        },
+                        methods: {
+                            hide() {
+                                this.hidden = true
+                            }
+                        }
+                    })
+                    .mount('#app')
+            </script>
+        </body>
+</html> 

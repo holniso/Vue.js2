@@ -1,0 +1,31 @@
+.ui.star.message{
+    background-color: #f9d56e;
+    color: rgba(0, 0, 0, .87);
+}
+.ui.star.message .header{
+    color: rgba(0, 0, 0, .87);
+}
+
+.ui.error.message{
+    background-color: #ffb4b8;
+    color: rgba(0, 0, 0, .87);
+}
+.ui.error.message .header{
+    color: rgba(0, 0, 0, .87);
+}
+
+.ui.success.message{
+    background-color: #b8dd94;
+    color: rgba(0, 0, 0, .87);
+}
+.ui.success.message .header{
+    color: rgba(0, 0, 0, .87);
+}
+
+.ui.info.message{
+    background-color: #a9b4d8;
+    color: rgba(0, 0, 0, .87);
+}
+.ui.info.message .header{
+    color: rgba(0, 0, 0, .87);
+}
